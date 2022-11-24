@@ -2,11 +2,20 @@ import { Route, Routes } from 'react-router-dom'
 import { Box } from '@mui/material'
 
 import './App.css'
+import Home from './pages/home'
+import ExerciseDetail from './pages/ExerciseDetail'
+import Navbar from './components/Navbar'
 
 const App = () => {
-  return (
-    <Box width="400px">App</Box>
-  )
+	return (
+		<Box width="400px">
+			<Navbar />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/exercise.:id" element={<ExerciseDetail />} />
+			</Routes>
+		</Box>
+	)
 }
 
 export default App
