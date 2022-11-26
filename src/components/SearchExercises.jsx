@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react'
 import { Box, Button, Stack, TextField, Typography } from '@mui/material'
-import { SearchOffSharp } from '@mui/icons-material'
+import { exerciseOptions, fetchData } from '../utils/fetchData'
 
 const SearchExercises = () => {
 	const [search, setSearch] = useState('')
 
 	const handleSearch = async () => {
 		if (search) {
-			// const exercisesData = await fetchData()
+			const exercisesData = await fetchData(
+				'https://exercisedb.p.rapidapi.com/exercises/bodyPartList',
+				exerciseOptions
+			)
+
+			console.log(exercisesData);
 		}
 	}
 
