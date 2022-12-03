@@ -26,6 +26,8 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 					<Pagination 
 						color='standard'
 						shape='rounded'
+						defaultPage={1}
+						count={Math.ceil(exercises.length / 9)}
 					/>
 				)}
 			</Stack>
